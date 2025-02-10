@@ -1,0 +1,24 @@
+cluster.name: my-application
+
+node.name: node-1
+
+path.data: /var/lib/elasticsearch
+
+path.logs: /var/log/elasticsearch
+
+network.host: 0.0.0.0  
+http.port: 9200  
+
+# Настройки обнаружения 
+discovery.seed_hosts: ["127.0.0.1"]   
+cluster.initial_master_nodes: ["node-1"] 
+
+# Безопасность 
+xpack.security.enabled: false
+
+# Лимиты ресурсов 
+bootstrap.memory_lock: true
+indices.memory.index_buffer_size: 10%
+
+# Снятие ограничений
+http.max_content_length: 100mb
